@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntregasADomicilio.Business
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A4F95E54-C61C-4B51-8799-5F58087B42B9}"
 	ProjectSection(SolutionItems) = preProject
-		.README = .README
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntregasADomicilio.Api", "EntregasADomiclio.Api\EntregasADomicilio.Api.csproj", "{838AE167-C952-4BDA-B489-DF6DCB9FF3E4}"
@@ -22,11 +22,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mobile.Android", "Mobile\Mo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mobile.iOS", "Mobile\Mobile.iOS\Mobile.iOS.csproj", "{1B45897A-9607-4344-BD29-706D927C75A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mobile", "Mobile\Mobile\Mobile.csproj", "{46E2158E-8F4B-4AA2-988F-720886507E95}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mobile", "Mobile\Mobile\Mobile.csproj", "{46E2158E-8F4B-4AA2-988F-720886507E95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntregasADomicilio.Core", "EntregasADomicilio.Core\EntregasADomicilio.Core.csproj", "{DB23D293-69D2-4B96-AAC2-F14F4B75655C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntregasADomicilio.Core", "EntregasADomicilio.Core\EntregasADomicilio.Core.csproj", "{DB23D293-69D2-4B96-AAC2-F14F4B75655C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntregasADomicilio.ServicioMobile", "EntregasADomicilio.ServicioMobile\EntregasADomicilio.ServicioMobile.csproj", "{43A2F579-8F19-4FCB-A386-BF77213AA67E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntregasADomicilio.ServicioMobile", "EntregasADomicilio.ServicioMobile\EntregasADomicilio.ServicioMobile.csproj", "{43A2F579-8F19-4FCB-A386-BF77213AA67E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{FD9E69D4-E2B3-4D90-A0E0-328C56D6FCDC}"
 EndProject
