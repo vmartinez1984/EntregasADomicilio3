@@ -1,0 +1,8 @@
+FROM mcr.microsoft.com/dotnet/aspnet:6.0 as runtime
+WORKDIR /publish
+EXPOSE 80
+COPY bin/Release/net6.0/publish .
+ENTRYPOINT ["dotnet","EntregasADomicilio.Mvc.Publica.dll"]
+
+# docker build -t entregas_a_domicilio_publica_dotnet . -f "Dockerfile"
+# docker run -d -v /c/temp-keys:/root/.aspnet/DataProtection-Keys entregas_a_domicilio_publica_dotnet

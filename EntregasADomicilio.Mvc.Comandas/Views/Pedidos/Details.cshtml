@@ -1,0 +1,130 @@
+﻿@using EntregasADomicilio.Core.Entidades
+@model Pedido
+
+@{
+    ViewData["Title"] = "Detalles";
+}
+
+<h1>Detalles</h1>
+
+<div>
+    <h4>Pedido</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Total)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Total)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ClienteId)
+        </dt>
+        <dd class="col-sm-10">
+            <dl class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Cliente.Nombre)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Cliente.Nombre)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Cliente.Apellidos)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Cliente.Apellidos)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Cliente.Telefono)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Cliente.Telefono)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Cliente.Direcciones)
+                </dt>
+                <dd class="col-sm-10">
+                    @{
+                        Direccion direccion = Model.Cliente.Direcciones.Where(x => x.EsPrincipal).FirstOrDefault();
+                    }
+                    <dl class="row">
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => direccion.CalleYNumero)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => direccion.CalleYNumero)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => direccion.Referencias)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => direccion.Referencias)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => direccion.Colonia)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => direccion.Colonia)
+                        </dd>
+                    </dl>
+                </dd>
+            </dl>
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DetalleDelPedido)
+        </dt>
+
+        <dd class="col-sm-10">
+            @foreach (var item in Model.DetalleDelPedido)
+            {
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => item.Platillo.Nombre)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => item.Platillo.Nombre)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => item.Platillo.Descripcion)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => item.Platillo.Descripcion)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => item.Platillo.Precio)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => item.Platillo.Precio)
+                    </dd>
+                </dl>
+            }
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Comentario)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Comentario)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FechaDeRegistro)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FechaDeRegistro)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Estatus)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Estatus)
+        </dd>
+    </dl>
+</div>
+<div>    
+    <a asp-action="Index" asp-route-Estatus="@ViewBag.Estatus">Regresar a la lista</a>
+</div>

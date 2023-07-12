@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mobile.Views.Registro" Title="Registro">
+    <ScrollView VerticalOptions="FillAndExpand" Margin="10">
+        <StackLayout>
+            <Label Text="Correo"/>
+            <Entry x:Name="Correo" Keyboard="Email"/>
+            <Label Text="Contraseña"/>
+            <Entry x:Name="Contrasenia"/>
+            <Label Text="Nombre"/>
+            <Entry x:Name="Nombre"/>
+            <Label Text="Apellidos"/>
+            <Entry x:Name="Apellidos"/>
+            <Label Text="Número celular"/>            
+            <Entry x:Name="Telefono" Keyboard="Telephone"/>
+            <Label Text="Fecha de nacimiento"/>
+            <DatePicker x:Name="FechaDeNacimiento"/>
+            <Label Text="Calle y número"/>
+            <Entry x:Name="CalleYNumero"/>
+            <Label Text="Referencias"/>
+            <Entry x:Name="Referencias"/>
+            <Label Text="Código postal"/>
+            <StackLayout  Orientation="Horizontal">
+                <Entry x:Name="CodigoPostal" MaxLength="5" WidthRequest="150" Keyboard="Numeric"/>
+                <Button x:Name="BtnBuscarCodigoPostal" Text="Buscar CódigoPostal" Clicked="BtnBuscarCodigoPostal_Clicked"/>
+            </StackLayout>
+            <Picker x:Name="Colonias" Title="Seleccione colonia" ItemDisplayBinding="{Binding Asentamiento}" />
+            <Button Text="Registrarse" x:Name="BtnRegistrarCliente" Clicked="BtnRegistrarCliente_Clicked"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

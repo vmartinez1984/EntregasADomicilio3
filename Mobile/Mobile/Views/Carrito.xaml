@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mobile.Views.Carrito" Title="Carrito">
+    <ContentPage.Content>
+
+        <StackLayout Margin="10">
+            <Label Text="Lista del pedido"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <ListView x:Name="ListViewPlatillos" VerticalOptions="FillAndExpand" RowHeight="90">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions >
+                                <MenuItem Text="Quitar del carrito" x:Name="MenuItemQuitarDelCarrito" Clicked="MenuItemQuitarDelCarrito_Clicked" CommandParameter="{Binding .}"/>
+
+                            </ViewCell.ContextActions>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="3*"/>
+                                    <RowDefinition Height="2*"/>
+                                    <RowDefinition Height="2*"/>
+                                </Grid.RowDefinitions>
+                                <!--<Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>-->
+                                <Label Text="{Binding Nombre}" Grid.Row="0"  FontSize="Large"/>
+                                <Label Text="{Binding Descripcion}" Grid.Row="1" FontSize="Medium"/>
+                                <Label Text="{Binding Precio, StringFormat='{c}' }" Grid.Row="2" FontSize="Medium"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label x:Name="Total" Text="Total $ 160" FontSize="Medium"/>
+
+            <Label Text="Comentarios"/>
+            <Entry x:Name="Comentarios" Placeholder="Ej. Soya, soya con picante, un par de palillos, alergia al camarón" MaxLength="250" HeightRequest="100" />
+            <Label Text="Forma de pago"/>
+            <Picker x:Name="FormaDePago" Title="Seleccione forma de pago"/>
+
+            <Label Text="Entrega en"/>
+            <Label x:Name="Direccion"/>
+            <Button Text="Enviar pedido" x:Name="BtnEnviarPedido" Clicked="BtnEnviarPedido_Clicked"/>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

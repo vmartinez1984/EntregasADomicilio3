@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mobile.Views.MenuDePlatillos" Title="Platillos" 
+             >    
+    <StackLayout Margin="10">
+        <Label Text="Nuestros platillos" />        
+        <Picker x:Name="Categorias" Title="Categorias" ItemDisplayBinding="{Binding Nombre}" SelectedIndexChanged="Categorias_SelectedIndexChanged" />
+
+        <ListView x:Name="ListViewPlatillos" ItemTapped="ListViewPlatillos_ItemTapped" VerticalOptions="FillAndExpand" RowHeight="90">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.ContextActions >
+                            <MenuItem Text="Agregar a carrito" x:Name="MenuItemAgregarACarrito" Clicked="MenuItemAgregarACarrito_Clicked" CommandParameter="{Binding .}"/>
+                            <MenuItem Text="Ir a carrito" x:Name="MenuItemIrACarrito" Clicked="MenuItemIrACarrito_Clicked" CommandParameter="{Binding .}"/>
+                        </ViewCell.ContextActions>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="3*"/>
+                                <RowDefinition Height="2*"/>
+                                <RowDefinition Height="2*"/>
+                            </Grid.RowDefinitions>
+                            <!--<Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>-->
+                            <Label Text="{Binding Nombre}" Grid.Row="0"  FontSize="Large"/>
+                            <Label Text="{Binding Descripcion}" Grid.Row="1" FontSize="Medium"/>
+                            <Label Text="{Binding Precio, StringFormat='{c}' }" Grid.Row="2" FontSize="Medium"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+    <!--</ContentPage.Content>-->
+</ContentPage>

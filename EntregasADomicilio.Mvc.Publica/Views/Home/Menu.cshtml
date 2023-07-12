@@ -1,0 +1,85 @@
+﻿@using EntregasADomicilio.Core.Entidades;
+@model IEnumerable<Platillo>
+@{
+    ViewData["Title"] = "Menu";
+    int i = 1;
+}
+
+<!-- Menu Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h5 class="section-title ff-secondary text-center text-primary fw-normal">Menu</h5>
+            <h1 class="mb-5">Most Popular Items</h1>
+        </div>
+
+        <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.1s">
+            <ul class="nav nav-pills d-inline-flex justify-content-center border-bottom mb-5">
+                @foreach (Categoria item in ViewBag.Categorias)
+                {
+                    <li class="nav-item">
+                        @if (i == 1)
+                        {
+                            <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3 active" data-bs-toggle="pill" href="#tab-@i">
+                                <i class="fa fa-utensils fa-2x text-primary"></i>
+                                <div class="ps-3">
+                                    <small class="text-body">Popular</small>
+                                    <h6 class="mt-n1 mb-0">@item.Nombre</h6>
+                                </div>
+                            </a>
+                        }
+                        else
+                        {
+                            <a class="d-flex align-items-center text-start mx-3 me-0 pb-3" data-bs-toggle="pill" href="#tab-@i">
+                                <i class="fa fa-utensils fa-2x text-primary"></i>
+                                <div class="ps-3">
+                                    <small class="text-body">Lovely</small>
+                                    <h6 class="mt-n1 mb-0">@item.Nombre</h6>
+                                </div>
+                            </a>
+                        }
+                    </li>
+                    i++;
+                }
+            </ul>
+            <div class="tab-content">
+                @{
+                    i = 1;
+                    string active;
+                }
+                @foreach (Categoria categoria in ViewBag.Categorias)
+                {
+                    if (i == 1)
+                    {
+                        active = "active";
+                    }
+                    else
+                    {
+                        active = string.Empty;
+                    }
+                    <div id="tab-@i" class="tab-pane fade show p-0 @active">
+                        <div class="row g-4">
+                            @foreach (var platillo in Model.Where(x => x.CategoriaId == categoria.Id))
+                            {
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="data:image/png;base64,@platillo.ImagenEnBase64" alt="" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>@platillo.Nombre</span>
+                                                <span class="text-primary">$@platillo.Precio</span>
+                                            </h5>
+                                            <small class="fst-italic">@platillo.Descripcion</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    i++;
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Menu End -->
