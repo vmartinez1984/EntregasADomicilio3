@@ -28,8 +28,8 @@ namespace Mobile.Views
             {
                 Preferences.Set("cliente", JsonConvert.SerializeObject(cliente));
 
-                await Navigation.PopAsync();
-                await App.MasterDetailPage.Detail.Navigation.PushAsync(new MenuDePlatillos());
+                App.MasterDetailPage.IsPresented = false;
+                App.MasterDetailPage.Detail = new NavigationPage(new MenuDePlatillos());
             }
         }
 

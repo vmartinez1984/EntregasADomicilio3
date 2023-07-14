@@ -11,17 +11,17 @@
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>                
+                <RowDefinition Height="1*"/>                
                 <RowDefinition Height="4*"/>
             </Grid.RowDefinitions>
-            <Button BackgroundColor="White" Text="Perfil" x:Name="BtnPerfil" Clicked="BtnPerfil_Clicked" Grid.Row="1" />
+            <Button BackgroundColor="White" Text="Mi cuenta" x:Name="BtnPerfil" Clicked="BtnPerfil_Clicked" Grid.Row="1" />
             <Button BackgroundColor="White" Text="Iniciar sesión" x:Name="BtnIniciarSesion" Clicked="BtnIniciarSesion_Clicked"  Grid.Row="1"/>
-            <Button BackgroundColor="White" Text="Platillos" x:Name="BtnMenuDePlatillos" Clicked="BtnMenuDePlatillos_Clicked"  Grid.Row="2"/>
+            <Button BackgroundColor="White" Text="Menu" x:Name="BtnMenuDePlatillos" Clicked="BtnMenuDePlatillos_Clicked"  Grid.Row="2"/>
             <Button BackgroundColor="White" Text="Carrito" x:Name="BtnCarrito" Clicked="BtnCarrito_Clicked" Grid.Row="3"/>
-            <Button BackgroundColor="White" Text="Ver ultimo pedido" x:Name="BtnUltimoPedido" Clicked="BtnUltimoPedido_Clicked" Grid.Row="4"/>
-            <Button BackgroundColor="White" Text="Historial de pedidos" x:Name="BtnHistorialDePedidos" Clicked="BtnHistorialDePedidos_Clicked" Grid.Row="5"/>
-            <Button BackgroundColor="White" Text="Acerca de nosotros" x:Name="BtnAcerca" Clicked="BtnHistorialDePedidos_Clicked" Grid.Row="6"/>
+            <Button BackgroundColor="White" Text="Ver ultimo pedido" x:Name="BtnUltimoPedido" Clicked="BtnUltimoPedido_Clicked" Grid.Row="4"/>           
+            <Button BackgroundColor="White" Text="Sucursales" x:Name="BtnSucursales" Clicked="BtnSucursales_Clicked" Grid.Row="5"/>
+            <Button BackgroundColor="White" Text="Acerca de nosotros" x:Name="BtnAcerca" Clicked="BtnAcerca_Clicked" Grid.Row="6"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

@@ -72,5 +72,28 @@ namespace Mobile.Repositories
 
             return () => stream;
         }
-    }
+
+        public async Task<Func<Stream>> ObtenerStreamDeImagen(string ruta)
+        {
+            HttpClient client;
+            HttpRequestMessage request;
+            HttpResponseMessage response;
+            byte[] bytes;
+            Stream stream;
+
+            client = new HttpClient(new HttpClientHandler
+            {
+                ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; }
+            });
+
+            request = new HttpRequestMessage(HttpMethod.Get, _url + ruta.Substring(1));
+            //request = new HttpRequestMessage(HttpMethod.Get, "https://images.pexels.com/photos/214574/pexels-photo-214574.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+            response = await client.SendAsync(request);
+            bytes = await response.Content.ReadAsByteArrayAsync();
+            stream = new MemoryStream(bytes);
+
+            return () => stream;            
+        }
+
+    }//end class
 }

@@ -43,5 +43,14 @@ namespace EntregasADomicilio.BusinessLayer.Bl
 
             return cliente;
         }
+
+        public List<Cliente> ObtenerTodos()
+        {
+            List<Cliente> clientes;
+
+            clientes = _appDbContext.Cliente.ToList();
+
+            return clientes;
+        }
     }
 }

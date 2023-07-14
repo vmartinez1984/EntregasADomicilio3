@@ -1,12 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Mobile.Views.HistorialDePedidos" Title="Pedidos">
+             x:Class="Mobile.Views.Direcciones" Title="Mis direcciones">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Se listara los pedidos del cliente"
+            <Label Text="Se listara las direcciones y se podran editar o añadir nueva"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+            <Button Text="Agregar nueva dirección"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

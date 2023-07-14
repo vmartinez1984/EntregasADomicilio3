@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mobile.Views.Telefono" Title="Actualizar telefono">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>                
+                <RowDefinition Height="*"/>                
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="1">
+                <Label Text="Telefono celular"  HorizontalOptions="Center"/>
+                <Entry x:Name="Entrytelefono" Text="55 5658 1111" />
+                <Button x:Name="BtnActualizar"  Text="Actualizar telefono" />
+            </StackLayout>
+            <StackLayout Grid.Row="2" VerticalOptions="End">
+                <Button x:Name="BtnEditar"  Text="Editar datos de mi cuenta" />
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

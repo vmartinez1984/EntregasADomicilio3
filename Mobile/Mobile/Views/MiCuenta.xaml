@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mobile.Views.MiCuenta" Title="Mi cuenta" Padding="15">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="LabelNombre"/>
+            <Label x:Name="LabelCorreo"/>
+            <Button x:Name="BtnTelefono" Clicked="BtnTelefono_Clicked"/>
+            <Button Text="Mis pedidos" x:Name="BtnMisPedidos" Clicked="BtnMisPedidos_Clicked"/>
+            <Button Text="Mis direcciones" x:Name="BtnMisDirecciones" Clicked="BtnMisDirecciones_Clicked"/>
+            <Button Text="Cerrar sesión" x:Name="BtnCerrarSesion" Clicked="BtnCerrarSesion_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,7 +1,10 @@
 ﻿using EntregasADomicilio.Core.Entidades;
+using EntregasADomicilio.ServicioMobile.Servicios;
+using Mobile.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -32,8 +35,30 @@ namespace Mobile.Views
 
         private async void CargarPlatillos()
         {
+            List<PlatilloModel> platillos;
+
             _platillos = await App.Repositorio.Platillo.ObtenerTodos();
-            ListViewPlatillos.ItemsSource = _platillos;
+            platillos = new List<PlatilloModel>();
+            foreach (var item in _platillos)
+            {
+                platillos.Add(new PlatilloModel
+                {
+                    Id = item.Id,
+                    EstaActivo = item.EstaActivo,
+                    Descripcion = item.Descripcion,
+                    ImageSource = ImageSource.FromStream(await App.Repositorio.Platillo.ObtenerStreamDeImagen(item.Ruta)),
+                    CategoriaId = item.CategoriaId,
+                    Categoria = item.Categoria,
+                    Precio = item.Precio,
+                    Ruta = item.Ruta,
+                    ContentType = item.ContentType,
+                    FormFile = item.FormFile,
+                    ImagenEnBytes = item.ImagenEnBytes,
+                    Nombre = item.Nombre,
+                    NombreDelArchivo = item.NombreDelArchivo
+                });
+            }
+            ListViewPlatillos.ItemsSource = platillos;
         }
 
         private void Categorias_SelectedIndexChanged(object sender, EventArgs e)

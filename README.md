@@ -48,3 +48,11 @@ SqlServer, motor de base de datos
 Management Studio, visor de base de datos
 
 Docker, administrador de imagenes y contenedores
+
+## Instalación del Admin
+
+De permisos a la carpeta de wwwroot
+Click derecho en la carpeta
+Pestaña de seguridad
+De permiso de escritura y modificar al usuario IIS_...
+

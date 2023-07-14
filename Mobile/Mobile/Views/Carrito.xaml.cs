@@ -28,8 +28,11 @@ namespace Mobile.Views
             Direccion direccion;
 
             cliente = ObtenerCliente();
-            direccion = cliente.Direcciones.Where(x => x.EsPrincipal).FirstOrDefault();
-            Direccion.Text = $"{direccion.CalleYNumero}, {direccion.Referencias}, {direccion.Colonia}";
+            if (cliente != null)
+            {
+                direccion = cliente.Direcciones.Where(x => x.EsPrincipal).FirstOrDefault();
+                Direccion.Text = $"{direccion.CalleYNumero}, {direccion.Referencias}, {direccion.Colonia}";
+            }
         }
 
         private void ColocarPlatillos()
@@ -50,7 +53,7 @@ namespace Mobile.Views
 
         private void ColocarTotal()
         {
-            Total.Text = $"Total $ {ObtenerPlatillos().Sum(x=>x.Precio)}";
+            Total.Text = $"Total $ {ObtenerPlatillos().Sum(x => x.Precio)}";
         }
 
         private List<Platillo> ObtenerPlatillos()
@@ -60,8 +63,8 @@ namespace Mobile.Views
 
             json = Preferences.Get("ListaDePlatillos", string.Empty);
             platillos = JsonConvert.DeserializeObject<List<Platillo>>(json);
-            if(platillos == null)
-                platillos= new List<Platillo>();
+            if (platillos == null)
+                platillos = new List<Platillo>();
 
             return platillos;
         }
@@ -74,7 +77,7 @@ namespace Mobile.Views
 
             platillo = (sender as MenuItem).CommandParameter as Platillo;
             platillos = ObtenerPlatillos();
-            platilloAQuitar = platillos.FirstOrDefault(x=> x.Id == platillo.Id);
+            platilloAQuitar = platillos.FirstOrDefault(x => x.Id == platillo.Id);
             platillos.Remove(platilloAQuitar);
 
             Preferences.Set("ListaDePlatillos", JsonConvert.SerializeObject(platillos));
@@ -99,7 +102,7 @@ namespace Mobile.Views
             BtnEnviarPedido.IsEnabled = true;
 
             Preferences.Remove("ListaDePlatillos");
-            Preferences.Set("PedidoId",data.ToString());
+            Preferences.Set("PedidoId", data.ToString());
 
             await DisplayAlert("Pedido", "Pedido registrado en tienda numero: " + data, "Ok");
         }

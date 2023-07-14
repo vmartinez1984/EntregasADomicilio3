@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -8,7 +9,7 @@ namespace EntregasADomicilio.Core.Entidades
     {
         public int Id { get; set; }
 
-        [Required( ErrorMessage = "El nombre es requerido")]
+        [Required(ErrorMessage = "El nombre es requerido")]
         [StringLength(50)]
         public string Nombre { get; set; }
 
@@ -23,19 +24,24 @@ namespace EntregasADomicilio.Core.Entidades
         [NotMapped]
         public IFormFile FormFile { get; set; }
 
-        public string ImagenEnBase64 { get; set; }
+        [JsonIgnore]
+        public byte[] ImagenEnBytes { get; set; }
 
         public bool EstaActivo { get; set; } = true;
 
-        [Required(ErrorMessage ="Seleccione una categoria")]
+        [Required(ErrorMessage = "Seleccione una categoria")]
         [Display(Name = "Categoria")]
         public int CategoriaId { get; set; }
 
         [ForeignKey("CategoriaId")]
         public virtual Categoria Categoria { get; set; }
 
-        public string Ruta { get; set; }
+        public string Ruta
+        {
+            get; set;
+        }
 
-        public string NombreDelArchivo  { get; set; }
+        public string NombreDelArchivo { get; set; }
+        public string ContentType { get; set; }
     }
 }

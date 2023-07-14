@@ -1,6 +1,10 @@
 ﻿using EntregasADomicilio.BusinessLayer.Bl;
 using EntregasADomicilio.Core.Entidades;
 using Microsoft.AspNetCore.Mvc;
+using System.IO;
+using System.Net;
+using System.Net.Http.Headers;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace EntregasADomicilio.Api.Controllers
 {
@@ -16,7 +20,8 @@ namespace EntregasADomicilio.Api.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get() {
+        public IActionResult Get()
+        {
             List<Platillo> platillos;
 
             platillos = _unitOfWork.Platillo.ObtenerTodos();
@@ -25,12 +30,23 @@ namespace EntregasADomicilio.Api.Controllers
         }
 
         [HttpGet("Categorias/{categoriaId}")]
-        public IActionResult ObtenerPorCategoriaId(int categoriaId) {
+        public IActionResult ObtenerPorCategoriaId(int categoriaId)
+        {
             List<Platillo> platillos;
 
             platillos = _unitOfWork.Platillo.ObtenerPorCategoriaId(categoriaId);
 
             return Ok(platillos);
+        }
+
+        [HttpGet("{platilloId}/Imagen")]
+        public ActionResult ObtenerIamgen(int platilloId)
+        {
+            Platillo platillo;
+
+            platillo = _unitOfWork.Platillo.Obtener(platilloId);
+
+            return File(platillo.ImagenEnBytes, platillo.ContentType);
         }
     }
 }

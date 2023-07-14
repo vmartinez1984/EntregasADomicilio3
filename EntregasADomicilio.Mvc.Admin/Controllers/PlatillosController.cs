@@ -46,8 +46,7 @@ namespace EntregasADomicilio.Mvc.Admin.Controllers
         public ActionResult Create(Platillo platillo)
         {
             try
-            {
-                
+            {                
                 _unitOfWork.Platillo.Agregar(platillo);               
                 return RedirectToAction(nameof(Index));
             }
@@ -75,12 +74,12 @@ namespace EntregasADomicilio.Mvc.Admin.Controllers
         {
             try
             {
-                Guid guid = Guid.NewGuid();
-                var fileName = System.IO.Path.Combine(_webHostEnvironment.ContentRootPath, "wwwroot", "img", "platillos", $"{guid}.jpg");
-                //C:\Users\vmartinez\source\repos\EntregasADomicilio\EntregasADomicilio.Mvc.Admin\wwwroot\img\platillos\
-                platillo.FormFile.CopyToAsync(new System.IO.FileStream(fileName, System.IO.FileMode.Create));
-                platillo.Ruta = System.IO.Path.Combine("wwwroot", "img", "platillos", $"{guid}.jpg");
-                platillo.NombreDelArchivo = platillo.FormFile.FileName;
+                //Guid guid = Guid.NewGuid();
+                //var fileName = System.IO.Path.Combine(_webHostEnvironment.ContentRootPath, "wwwroot", "img", "platillos", $"{guid}.jpg");
+                ////C:\Users\vmartinez\source\repos\EntregasADomicilio\EntregasADomicilio.Mvc.Admin\wwwroot\img\platillos\
+                //platillo.FormFile.CopyToAsync(new System.IO.FileStream(fileName, System.IO.FileMode.Create));
+                //platillo.Ruta = System.IO.Path.Combine("wwwroot", "img", "platillos", $"{guid}.jpg");
+                //platillo.NombreDelArchivo = platillo.FormFile.FileName;
                 _unitOfWork.Platillo.Actualizar(id,platillo);
 
                 return RedirectToAction(nameof(Index));
@@ -92,5 +91,14 @@ namespace EntregasADomicilio.Mvc.Admin.Controllers
             }
         }
 
+        [HttpGet("Platillos/{platilloId}/Imagen")]
+        public ActionResult ObtenerIamgen(int platilloId)
+        {            
+            Platillo platillo;
+
+            platillo = _unitOfWork.Platillo.Obtener(platilloId);            
+
+            return File(platillo.ImagenEnBytes, platillo.ContentType);
+        }
     }
 }

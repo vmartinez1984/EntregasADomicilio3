@@ -1,15 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Mobile.Views.InicioDeSesion">
+             x:Class="Mobile.Views.InicioDeSesion" Title="Inciciar sesión">
     <StackLayout>
-        <Label Text="Correo"/>
-        <Entry x:Name="Correo" Keyboard="Email"/>
-        <Label Text="Contraseña"/>
-        <Entry x:Name="Contrasenia"/>       
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Fill">
+            <Label Text="Correo" />
+            <Entry x:Name="Correo" Keyboard="Email"/>
+            <Label Text="Contraseña"/>
+            <Entry x:Name="Contrasenia"/>
 
-        <Button Text="Iniciar sesión" x:Name="BtnIniciarSesion" Clicked="BtnIniciarSesion_Clicked"/>
-
-        <Button Text="Registrarse" x:Name="BtnRegistrarse" Clicked="BtnRegistrarse_Clicked"/>
+            <Button Text="Iniciar sesión" x:Name="BtnIniciarSesion" Clicked="BtnIniciarSesion_Clicked"/>
+        </StackLayout>
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Fill">
+            <Label Text="Aun no esta registrado?"/>
+            <Button Text="Registrarse" x:Name="BtnRegistrarse" Clicked="BtnRegistrarse_Clicked"/>
+        </StackLayout>
     </StackLayout>
 </ContentPage>

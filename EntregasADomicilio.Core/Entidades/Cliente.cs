@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -24,6 +23,8 @@ namespace EntregasADomicilio.Core.Entidades
         [StringLength(50)]
         public string Apellidos { get; set; }
 
+        [Display(Name = "Fecha de nacimiento")]
+        [DataType(DataType.Date)]
         public DateTime FechaDeNacimiento { get; set; }
 
         public virtual List<Direccion> Direcciones { get; set; }        

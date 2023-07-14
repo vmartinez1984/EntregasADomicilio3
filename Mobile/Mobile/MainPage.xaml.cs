@@ -17,7 +17,7 @@ namespace Mobile
             cliente = ObtenerCliente();
             if( cliente == null)
             {
-                this.Detail = new NavigationPage(new Registro());
+                this.Detail = new NavigationPage(new InicioDeSesion());
             }
             else
             {

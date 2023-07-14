@@ -2,6 +2,7 @@
 using EntregasADomicilio.Core.Entidades;
 using EntregasADomicilio.BusinessLayer.Helpers;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
 
 namespace EntregasADomicilio.BusinessLayer.Bl
 {
@@ -25,9 +26,14 @@ namespace EntregasADomicilio.BusinessLayer.Bl
             platillo1.Nombre = platillo.Nombre;
             platillo1.Precio = platillo.Precio;
             platillo1.NombreDelArchivo = platillo.NombreDelArchivo;
-            platillo1.Ruta = platillo.Ruta;
+            //platillo1.Ruta = platillo.Ruta;
             if (platillo.FormFile != null)
-                platillo1.ImagenEnBase64 = Convert.ToBase64String(platillo.FormFile.OpenReadStream().ReadToEnd());
+            {
+                platillo1.ImagenEnBytes = platillo.FormFile.OpenReadStream().ReadToEnd();// ObtenerBytes(platillo.FormFile);
+                platillo1.ContentType = platillo.FormFile.ContentType;
+                platillo1.NombreDelArchivo = platillo.FormFile.FileName;
+                //platillo1.ImagenEnBase64 = Convert.ToBase64String(platillo.FormFile.OpenReadStream().ReadToEnd());
+            }
             _appDbContext.Update(platillo1);
 
             _appDbContext.SaveChanges();
@@ -35,11 +41,30 @@ namespace EntregasADomicilio.BusinessLayer.Bl
 
         public int Agregar(Platillo platillo)
         {
-            platillo.ImagenEnBase64 = Convert.ToBase64String(platillo.FormFile.OpenReadStream().ReadToEnd());
+            if (platillo != null)
+            {
+                platillo.ImagenEnBytes = platillo.FormFile.OpenReadStream().ReadToEnd();// ObtenerBytes(platillo.FormFile);
+                platillo.ContentType = platillo.FormFile.ContentType;
+                platillo.NombreDelArchivo = platillo.FormFile.FileName;
+            }
+            //platillo.ImagenEnBase64 = Convert.ToBase64String(platillo.FormFile.OpenReadStream().ReadToEnd());
             _appDbContext.Platillo.Add(platillo);
             _appDbContext.SaveChanges();
 
             return platillo.Id;
+        }
+
+        private byte[] ObtenerBytes(IFormFile formFile)
+        {
+            byte[] bytes;
+
+            using (var memoryStream = new MemoryStream())
+            {
+                formFile.CopyTo(memoryStream);
+                bytes = memoryStream.ToArray();
+            }
+
+            return bytes;
         }
 
         public Platillo Obtener(int id)
@@ -67,6 +92,18 @@ namespace EntregasADomicilio.BusinessLayer.Bl
             lista = _appDbContext.Platillo
                 .Include(x => x.Categoria)
                 .Where(x => x.EstaActivo == true).ToList();
+            lista.ForEach(platillo =>
+            {
+                if (platillo.ImagenEnBytes == null)
+                {
+                    platillo.Ruta = string.Empty;
+                }
+                else
+                {
+                    platillo.ImagenEnBytes = null;
+                    platillo.Ruta = $"/Platillos/{platillo.Id}/Imagen";
+                }
+            });
 
             return lista;
         }

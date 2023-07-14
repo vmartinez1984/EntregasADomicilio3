@@ -17,10 +17,10 @@ namespace Mobile.Views
             }
         }
 
-        private async void BtnIniciarSesion_Clicked(object sender, EventArgs e)
+        private void BtnIniciarSesion_Clicked(object sender, EventArgs e)
         {
             App.MasterDetailPage.IsPresented = false;
-            await App.MasterDetailPage.Detail.Navigation.PushAsync(new InicioDeSesion());
+            App.MasterDetailPage.Detail = new NavigationPage(new Carrito());
         }
 
         private void BtnCarrito_Clicked(object sender, EventArgs e)
@@ -38,8 +38,7 @@ namespace Mobile.Views
         private  void BtnPerfil_Clicked(object sender, EventArgs e)
         {
             App.MasterDetailPage.IsPresented = false;
-            //await App.MasterDetailPage.Detail.Navigation.PushAsync(new Registro());                        
-            App.MasterDetailPage.Detail = new NavigationPage(new Registro());                        
+            App.MasterDetailPage.Detail = new NavigationPage(new MiCuenta());
         }
 
         private void BtnUltimoPedido_Clicked(object sender, EventArgs e)
@@ -49,9 +48,16 @@ namespace Mobile.Views
             App.MasterDetailPage.Detail = new NavigationPage(new EstatusDelUltimoPedido());
         }
 
-        private void BtnHistorialDePedidos_Clicked(object sender, EventArgs e)
+        private void BtnAcerca_Clicked(object sender, EventArgs e)
         {
+            App.MasterDetailPage.IsPresented = false;
+            App.MasterDetailPage.Detail = new NavigationPage(new AcercaDe());
+        }
 
+        private void BtnSucursales_Clicked(object sender, EventArgs e)
+        {
+            App.MasterDetailPage.IsPresented = false;
+            App.MasterDetailPage.Detail = new NavigationPage(new Sucursales());
         }
     }
 }
