@@ -18,7 +18,18 @@ namespace EntregasADomicilio.Mvc.Publica.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            List<Platillo> platillos;
+            string urlDelServidor;
+
+            urlDelServidor = "http://localhost:9081/api";
+            platillos = _unitOfWork.Platillo.ObtenerTodos();
+            platillos.ForEach(platillo =>
+            {
+                platillo.Ruta = $"{urlDelServidor}{platillo.Ruta}";
+            });
+            ViewBag.Categorias = _unitOfWork.Categoria.ObtenerTodos();
+
+            return View(platillos);
         }
 
         public IActionResult About()
@@ -34,14 +45,25 @@ namespace EntregasADomicilio.Mvc.Publica.Controllers
         public IActionResult Menu()
         {
             List<Platillo> platillos;
+            string urlDelServidor;
 
+            urlDelServidor = "http://localhost:9081/api";
             platillos = _unitOfWork.Platillo.ObtenerTodos();
-            ViewBag.Categorias  = _unitOfWork.Categoria.ObtenerTodos();
-            
+            platillos.ForEach(platillo =>
+            {
+                platillo.Ruta = $"{urlDelServidor}{platillo.Ruta}";
+            });
+            ViewBag.Categorias = _unitOfWork.Categoria.ObtenerTodos();
+
             return View(platillos);
         }
 
         public IActionResult Booking()
+        {
+            return View();
+        }
+
+        public IActionResult Contact()
         {
             return View();
         }

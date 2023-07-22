@@ -1,0 +1,180 @@
+2023-07-18 17:37:23.375 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-07-18 17:37:23.390 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/swagger/index.html - -
+2023-07-18 17:37:23.412 -06:00 [INF] Hosting environment: Development
+2023-07-18 17:37:23.412 -06:00 [INF] Content root path: C:\Users\vmartinez\source\repos\EntregasADomicilio\EntregasADomiclio.Api\
+2023-07-18 17:37:23.750 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/_framework/aspnetcore-browser-refresh.js - -
+2023-07-18 17:37:23.752 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/swagger/index.html - - - 200 - text/html;charset=utf-8 365.6889ms
+2023-07-18 17:37:23.761 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/_framework/aspnetcore-browser-refresh.js - - - 200 12014 application/javascript;+charset=utf-8 8.7656ms
+2023-07-18 17:37:23.805 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/_vs/browserLink - -
+2023-07-18 17:37:23.842 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 36.4578ms
+2023-07-18 17:37:23.957 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/swagger/v1/swagger.json - -
+2023-07-18 17:37:24.065 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 107.8490ms
+2023-07-18 17:37:29.222 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/api/Categorias - -
+2023-07-18 17:37:29.232 -06:00 [INF] Executing endpoint 'EntregasADomicilio.Api.Controllers.CategoriasController.Get (EntregasADomicilio.Api)'
+2023-07-18 17:37:29.245 -06:00 [INF] Route matched with {action = "Get", controller = "Categorias"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller EntregasADomicilio.Api.Controllers.CategoriasController (EntregasADomicilio.Api).
+2023-07-18 17:37:30.722 -06:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EntregasADomicilio.Core.Entidades.Categoria, EntregasADomicilio.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-07-18 17:37:30.736 -06:00 [INF] Executed action EntregasADomicilio.Api.Controllers.CategoriasController.Get (EntregasADomicilio.Api) in 1486.5557ms
+2023-07-18 17:37:30.738 -06:00 [INF] Executed endpoint 'EntregasADomicilio.Api.Controllers.CategoriasController.Get (EntregasADomicilio.Api)'
+2023-07-18 17:37:30.746 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/api/Categorias - - - 200 - application/json;+charset=utf-8 1523.9570ms
+2023-07-18 17:38:25.141 -06:00 [FTL] Application startup exception
+System.InvalidOperationException: Unable to resolve service for type 'Vmartinez.RequestInspector.Interfaces.IRequestRepository' while attempting to activate 'VMtz.RequestInspector.RequestInspectorMiddleware'.
+   at Microsoft.Extensions.Internal.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_0.<UseMiddleware>b__0(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.<ConfigureApplication>b__27_0(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+2023-07-18 17:39:51.530 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-07-18 17:39:51.548 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/swagger/index.html - -
+2023-07-18 17:39:51.574 -06:00 [INF] Hosting environment: Development
+2023-07-18 17:39:51.574 -06:00 [INF] Content root path: C:\Users\vmartinez\source\repos\EntregasADomicilio\EntregasADomiclio.Api\
+2023-07-18 17:39:51.922 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/_framework/aspnetcore-browser-refresh.js - -
+2023-07-18 17:39:51.924 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/swagger/index.html - - - 200 - text/html;charset=utf-8 380.1567ms
+2023-07-18 17:39:51.934 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/_framework/aspnetcore-browser-refresh.js - - - 200 12014 application/javascript;+charset=utf-8 8.3309ms
+2023-07-18 17:39:51.977 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/_vs/browserLink - -
+2023-07-18 17:39:52.011 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 34.8595ms
+2023-07-18 17:39:52.062 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/swagger/v1/swagger.json - -
+2023-07-18 17:39:52.173 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 110.0215ms
+2023-07-18 17:39:55.017 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/api/Categorias - -
+2023-07-18 17:39:55.133 -06:00 [INF] Executing endpoint 'EntregasADomicilio.Api.Controllers.CategoriasController.Get (EntregasADomicilio.Api)'
+2023-07-18 17:39:55.147 -06:00 [INF] Route matched with {action = "Get", controller = "Categorias"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller EntregasADomicilio.Api.Controllers.CategoriasController (EntregasADomicilio.Api).
+2023-07-18 17:39:56.561 -06:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EntregasADomicilio.Core.Entidades.Categoria, EntregasADomicilio.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-07-18 17:39:56.574 -06:00 [INF] Executed action EntregasADomicilio.Api.Controllers.CategoriasController.Get (EntregasADomicilio.Api) in 1423.2409ms
+2023-07-18 17:39:56.576 -06:00 [INF] Executed endpoint 'EntregasADomicilio.Api.Controllers.CategoriasController.Get (EntregasADomicilio.Api)'
+2023-07-18 17:39:56.716 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/api/Categorias - - - 200 - application/json;+charset=utf-8 1698.4965ms
+2023-07-18 17:52:04.503 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/api/Pedidos/50 - -
+2023-07-18 17:52:04.525 -06:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+EntregasADomicilio.Api.Controllers.PedidosController.ObtenerPedidosPorCliente (EntregasADomicilio.Api)
+EntregasADomicilio.Api.Controllers.PedidosController.Obtener (EntregasADomicilio.Api)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-07-18 17:52:04.543 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/api/Pedidos/50 - - - 500 - text/plain;+charset=utf-8 39.8650ms
+2023-07-18 17:52:55.066 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-07-18 17:52:55.080 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/swagger/index.html - -
+2023-07-18 17:52:55.103 -06:00 [INF] Hosting environment: Development
+2023-07-18 17:52:55.103 -06:00 [INF] Content root path: C:\Users\vmartinez\source\repos\EntregasADomicilio\EntregasADomiclio.Api\
+2023-07-18 17:52:55.485 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/_framework/aspnetcore-browser-refresh.js - -
+2023-07-18 17:52:55.490 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/swagger/index.html - - - 200 - text/html;charset=utf-8 412.2812ms
+2023-07-18 17:52:55.497 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/_framework/aspnetcore-browser-refresh.js - - - 200 12014 application/javascript;+charset=utf-8 5.5897ms
+2023-07-18 17:52:55.537 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/_vs/browserLink - -
+2023-07-18 17:52:55.572 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 35.0412ms
+2023-07-18 17:52:55.615 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/swagger/v1/swagger.json - -
+2023-07-18 17:52:55.715 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 99.8855ms
+2023-07-18 17:53:13.061 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-07-18 17:53:13.076 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/swagger/index.html - -
+2023-07-18 17:53:13.102 -06:00 [INF] Hosting environment: Development
+2023-07-18 17:53:13.103 -06:00 [INF] Content root path: C:\Users\vmartinez\source\repos\EntregasADomicilio\EntregasADomiclio.Api\
+2023-07-18 17:53:13.477 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/_framework/aspnetcore-browser-refresh.js - -
+2023-07-18 17:53:13.483 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/swagger/index.html - - - 200 - text/html;charset=utf-8 410.2620ms
+2023-07-18 17:53:13.491 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/_framework/aspnetcore-browser-refresh.js - - - 200 12014 application/javascript;+charset=utf-8 5.4074ms
+2023-07-18 17:53:13.541 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/_vs/browserLink - -
+2023-07-18 17:53:13.579 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 38.4120ms
+2023-07-18 17:53:13.630 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/swagger/v1/swagger.json - -
+2023-07-18 17:53:13.750 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 120.1848ms
+2023-07-18 17:53:26.733 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/api/Pedidos/Clientes/50 - -
+2023-07-18 17:53:26.843 -06:00 [INF] Executing endpoint 'EntregasADomicilio.Api.Controllers.PedidosController.ObtenerPedidosPorCliente (EntregasADomicilio.Api)'
+2023-07-18 17:53:26.879 -06:00 [INF] Route matched with {action = "ObtenerPedidosPorCliente", controller = "Pedidos"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ObtenerPedidosPorCliente(Int32) on controller EntregasADomicilio.Api.Controllers.PedidosController (EntregasADomicilio.Api).
+2023-07-18 17:53:28.417 -06:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EntregasADomicilio.Core.Entidades.Pedido, EntregasADomicilio.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-07-18 17:53:28.438 -06:00 [INF] Executed action EntregasADomicilio.Api.Controllers.PedidosController.ObtenerPedidosPorCliente (EntregasADomicilio.Api) in 1555.2605ms
+2023-07-18 17:53:28.440 -06:00 [INF] Executed endpoint 'EntregasADomicilio.Api.Controllers.PedidosController.ObtenerPedidosPorCliente (EntregasADomicilio.Api)'
+2023-07-18 17:53:28.593 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/api/Pedidos/Clientes/50 - - - 200 - application/json;+charset=utf-8 1859.8763ms
+2023-07-18 17:53:39.088 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/api/Pedidos/50 - -
+2023-07-18 17:53:39.090 -06:00 [INF] Executing endpoint 'EntregasADomicilio.Api.Controllers.PedidosController.Obtener (EntregasADomicilio.Api)'
+2023-07-18 17:53:39.092 -06:00 [INF] Route matched with {action = "Obtener", controller = "Pedidos"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Obtener(Int32) on controller EntregasADomicilio.Api.Controllers.PedidosController (EntregasADomicilio.Api).
+2023-07-18 17:53:39.159 -06:00 [INF] Executing OkObjectResult, writing value of type 'null'.
+2023-07-18 17:53:39.159 -06:00 [INF] Executed action EntregasADomicilio.Api.Controllers.PedidosController.Obtener (EntregasADomicilio.Api) in 67.0591ms
+2023-07-18 17:53:39.159 -06:00 [INF] Executed endpoint 'EntregasADomicilio.Api.Controllers.PedidosController.Obtener (EntregasADomicilio.Api)'
+2023-07-18 17:53:39.165 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/api/Pedidos/50 - - - 204 0 - 76.2458ms
+2023-07-18 17:53:46.600 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/api/Pedidos/50 - -
+2023-07-18 17:53:46.600 -06:00 [INF] Executing endpoint 'EntregasADomicilio.Api.Controllers.PedidosController.Obtener (EntregasADomicilio.Api)'
+2023-07-18 17:53:46.600 -06:00 [INF] Route matched with {action = "Obtener", controller = "Pedidos"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Obtener(Int32) on controller EntregasADomicilio.Api.Controllers.PedidosController (EntregasADomicilio.Api).
+2023-07-18 17:53:46.606 -06:00 [INF] Executing OkObjectResult, writing value of type 'null'.
+2023-07-18 17:53:46.607 -06:00 [INF] Executed action EntregasADomicilio.Api.Controllers.PedidosController.Obtener (EntregasADomicilio.Api) in 6.4676ms
+2023-07-18 17:53:46.607 -06:00 [INF] Executed endpoint 'EntregasADomicilio.Api.Controllers.PedidosController.Obtener (EntregasADomicilio.Api)'
+2023-07-18 17:53:46.609 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/api/Pedidos/50 - - - 204 0 - 9.8212ms
+2023-07-18 18:04:37.791 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-07-18 18:04:37.807 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/swagger/index.html - -
+2023-07-18 18:04:37.832 -06:00 [INF] Hosting environment: Development
+2023-07-18 18:04:37.833 -06:00 [INF] Content root path: C:\Users\vmartinez\source\repos\EntregasADomicilio\EntregasADomiclio.Api\
+2023-07-18 18:04:38.189 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/_framework/aspnetcore-browser-refresh.js - -
+2023-07-18 18:04:38.191 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/swagger/index.html - - - 200 - text/html;charset=utf-8 387.9589ms
+2023-07-18 18:04:38.203 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/_framework/aspnetcore-browser-refresh.js - - - 200 12014 application/javascript;+charset=utf-8 9.2327ms
+2023-07-18 18:04:38.241 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/_vs/browserLink - -
+2023-07-18 18:04:38.277 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 36.0605ms
+2023-07-18 18:04:38.322 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/swagger/v1/swagger.json - -
+2023-07-18 18:04:38.443 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 121.2166ms
+2023-07-18 18:04:44.946 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/api/Pedidos/50 - -
+2023-07-18 18:04:45.062 -06:00 [INF] Executing endpoint 'EntregasADomicilio.Api.Controllers.PedidosController.Obtener (EntregasADomicilio.Api)'
+2023-07-18 18:04:45.083 -06:00 [INF] Route matched with {action = "Obtener", controller = "Pedidos"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Obtener(Int32) on controller EntregasADomicilio.Api.Controllers.PedidosController (EntregasADomicilio.Api).
+2023-07-18 18:04:48.573 -06:00 [INF] Executing NotFoundObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-07-18 18:04:48.589 -06:00 [INF] Executed action EntregasADomicilio.Api.Controllers.PedidosController.Obtener (EntregasADomicilio.Api) in 3502.1393ms
+2023-07-18 18:04:48.591 -06:00 [INF] Executed endpoint 'EntregasADomicilio.Api.Controllers.PedidosController.Obtener (EntregasADomicilio.Api)'
+2023-07-18 18:04:48.755 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/api/Pedidos/50 - - - 404 - application/json;+charset=utf-8 3808.6253ms
+2023-07-18 18:06:32.438 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-07-18 18:06:32.455 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/swagger/index.html - -
+2023-07-18 18:06:32.479 -06:00 [INF] Hosting environment: Development
+2023-07-18 18:06:32.479 -06:00 [INF] Content root path: C:\Users\vmartinez\source\repos\EntregasADomicilio\EntregasADomiclio.Api\
+2023-07-18 18:06:32.849 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/_framework/aspnetcore-browser-refresh.js - -
+2023-07-18 18:06:32.851 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/swagger/index.html - - - 200 - text/html;charset=utf-8 399.8987ms
+2023-07-18 18:06:32.865 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/_framework/aspnetcore-browser-refresh.js - - - 200 12014 application/javascript;+charset=utf-8 8.7282ms
+2023-07-18 18:06:32.905 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/_vs/browserLink - -
+2023-07-18 18:06:32.947 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 41.9295ms
+2023-07-18 18:06:32.996 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/swagger/v1/swagger.json - -
+2023-07-18 18:06:33.190 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 193.7637ms
+2023-07-18 18:06:48.386 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/api/Clientes?id=50 - -
+2023-07-18 18:06:48.504 -06:00 [INF] Executing endpoint 'EntregasADomicilio.Api.Controllers.ClientesController.Get (EntregasADomicilio.Api)'
+2023-07-18 18:06:48.524 -06:00 [INF] Route matched with {action = "Get", controller = "Clientes"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int32) on controller EntregasADomicilio.Api.Controllers.ClientesController (EntregasADomicilio.Api).
+2023-07-18 18:06:50.629 -06:00 [INF] Executing OkObjectResult, writing value of type 'null'.
+2023-07-18 18:06:50.633 -06:00 [INF] Executed action EntregasADomicilio.Api.Controllers.ClientesController.Get (EntregasADomicilio.Api) in 2105.4445ms
+2023-07-18 18:06:50.635 -06:00 [INF] Executed endpoint 'EntregasADomicilio.Api.Controllers.ClientesController.Get (EntregasADomicilio.Api)'
+2023-07-18 18:06:50.800 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/api/Clientes?id=50 - - - 204 0 - 2414.4824ms
+2023-07-18 18:07:05.879 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/api/Pedidos/50 - -
+2023-07-18 18:07:05.880 -06:00 [INF] Executing endpoint 'EntregasADomicilio.Api.Controllers.PedidosController.Obtener (EntregasADomicilio.Api)'
+2023-07-18 18:07:05.881 -06:00 [INF] Route matched with {action = "Obtener", controller = "Pedidos"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Obtener(Int32) on controller EntregasADomicilio.Api.Controllers.PedidosController (EntregasADomicilio.Api).
+2023-07-18 18:07:09.889 -06:00 [INF] Executing NotFoundObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-07-18 18:07:09.902 -06:00 [INF] Executed action EntregasADomicilio.Api.Controllers.PedidosController.Obtener (EntregasADomicilio.Api) in 4021.0324ms
+2023-07-18 18:07:09.902 -06:00 [INF] Executed endpoint 'EntregasADomicilio.Api.Controllers.PedidosController.Obtener (EntregasADomicilio.Api)'
+2023-07-18 18:07:09.908 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/api/Pedidos/50 - - - 404 - application/json;+charset=utf-8 4029.7321ms
+2023-07-18 18:08:15.636 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-07-18 18:08:15.651 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/swagger/index.html - -
+2023-07-18 18:08:15.675 -06:00 [INF] Hosting environment: Development
+2023-07-18 18:08:15.676 -06:00 [INF] Content root path: C:\Users\vmartinez\source\repos\EntregasADomicilio\EntregasADomiclio.Api\
+2023-07-18 18:08:16.025 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/_framework/aspnetcore-browser-refresh.js - -
+2023-07-18 18:08:16.027 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/swagger/index.html - - - 200 - text/html;charset=utf-8 378.9705ms
+2023-07-18 18:08:16.036 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/_framework/aspnetcore-browser-refresh.js - - - 200 12014 application/javascript;+charset=utf-8 8.0810ms
+2023-07-18 18:08:16.081 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/_vs/browserLink - -
+2023-07-18 18:08:16.120 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 38.3840ms
+2023-07-18 18:08:16.158 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/swagger/v1/swagger.json - -
+2023-07-18 18:08:16.268 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 110.6514ms
+2023-07-18 18:10:52.826 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-07-18 18:10:52.841 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/swagger/index.html - -
+2023-07-18 18:10:52.865 -06:00 [INF] Hosting environment: Development
+2023-07-18 18:10:52.866 -06:00 [INF] Content root path: C:\Users\vmartinez\source\repos\EntregasADomicilio\EntregasADomiclio.Api\
+2023-07-18 18:10:53.218 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/_framework/aspnetcore-browser-refresh.js - -
+2023-07-18 18:10:53.221 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/swagger/index.html - - - 200 - text/html;charset=utf-8 383.2022ms
+2023-07-18 18:10:53.232 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/_framework/aspnetcore-browser-refresh.js - - - 200 12014 application/javascript;+charset=utf-8 9.8597ms
+2023-07-18 18:10:53.271 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/_vs/browserLink - -
+2023-07-18 18:10:53.309 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 37.8978ms
+2023-07-18 18:10:53.348 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/swagger/v1/swagger.json - -
+2023-07-18 18:10:53.458 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 110.3304ms
+2023-07-18 18:11:31.419 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/api/Platillos/1/Imagen - -
+2023-07-18 18:11:31.528 -06:00 [INF] Executing endpoint 'EntregasADomicilio.Api.Controllers.PlatillosController.ObtenerIamgen (EntregasADomicilio.Api)'
+2023-07-18 18:11:31.547 -06:00 [INF] Route matched with {action = "ObtenerIamgen", controller = "Platillos"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult ObtenerIamgen(Int32) on controller EntregasADomicilio.Api.Controllers.PlatillosController (EntregasADomicilio.Api).
+2023-07-18 18:11:33.061 -06:00 [INF] Executing FileContentResult, sending file with download name '' ...
+2023-07-18 18:11:33.070 -06:00 [INF] Executed action EntregasADomicilio.Api.Controllers.PlatillosController.ObtenerIamgen (EntregasADomicilio.Api) in 1518.3878ms
+2023-07-18 18:11:33.072 -06:00 [INF] Executed endpoint 'EntregasADomicilio.Api.Controllers.PlatillosController.ObtenerIamgen (EntregasADomicilio.Api)'
+2023-07-18 18:11:33.234 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/api/Platillos/1/Imagen - - - 200 1187856 image/png 1815.0316ms
+2023-07-18 18:12:18.659 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44328/api/Categorias - -
+2023-07-18 18:12:18.661 -06:00 [INF] Executing endpoint 'EntregasADomicilio.Api.Controllers.CategoriasController.Get (EntregasADomicilio.Api)'
+2023-07-18 18:12:18.662 -06:00 [INF] Route matched with {action = "Get", controller = "Categorias"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller EntregasADomicilio.Api.Controllers.CategoriasController (EntregasADomicilio.Api).
+2023-07-18 18:12:18.714 -06:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EntregasADomicilio.Core.Entidades.Categoria, EntregasADomicilio.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-07-18 18:12:18.724 -06:00 [INF] Executed action EntregasADomicilio.Api.Controllers.CategoriasController.Get (EntregasADomicilio.Api) in 61.9427ms
+2023-07-18 18:12:18.724 -06:00 [INF] Executed endpoint 'EntregasADomicilio.Api.Controllers.CategoriasController.Get (EntregasADomicilio.Api)'
+2023-07-18 18:12:18.729 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44328/api/Categorias - - - 200 - application/json;+charset=utf-8 70.4265ms

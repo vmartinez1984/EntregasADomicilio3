@@ -1,4 +1,7 @@
 using EntregasADomicilio.BusinessLayer.Helpers;
+using Serilog;
+using Vmartinez.RequestInspector.Extensores;
+using VMtz.RequestInspector;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +13,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Host.UseSerilog((hostContext, services, configuration) =>
+{
+    configuration.ReadFrom.Configuration(hostContext.Configuration);
+});
+
+builder.Services.AddRequestInpector();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -18,6 +28,7 @@ var app = builder.Build();
     app.UseSwagger();
     app.UseSwaggerUI();
 //}
+app.UseMiddleware<RequestInspectorMiddleware>();
 
 app.UseHttpsRedirection();
 

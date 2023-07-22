@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
 namespace EntregasADomicilio.Core.Entidades
 {
@@ -16,7 +17,7 @@ namespace EntregasADomicilio.Core.Entidades
         [JsonIgnore]
         public int Id { get; set; }
 
-        public decimal Total { get; set; }
+        public decimal Total { get { return DetalleDelPedido.Sum(x => x.Platillo.Id); } }
 
         public int ClienteId { get; set; }
 
@@ -30,7 +31,7 @@ namespace EntregasADomicilio.Core.Entidades
 
         [StringLength(250)]
         public string Comentario { get; set; }
-                
+
         [Display(Name = "Fecha")]
         public DateTime FechaDeRegistro { get; set; }
 

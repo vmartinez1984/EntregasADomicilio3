@@ -1,8 +1,13 @@
 ﻿@using EntregasADomicilio.Core.Entidades;
 @model IEnumerable<Platillo>
+@using Microsoft.AspNetCore.Http
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
 @{
     ViewData["Title"] = "Menu";
     int i = 1;
+    bool estaLogeado = false;
+
 }
 
 <!-- Menu Start -->
@@ -10,7 +15,7 @@
     <div class="container">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
             <h5 class="section-title ff-secondary text-center text-primary fw-normal">Menu</h5>
-            <h1 class="mb-5">Most Popular Items</h1>
+            <h1 class="mb-5">Nuestros platillos</h1>
         </div>
 
         <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.1s">
@@ -63,7 +68,7 @@
                             {
                                 <div class="col-lg-6">
                                     <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="data:image/png;base64,@platillo.ImagenEnBase64" alt="" style="width: 80px;">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="@platillo.Ruta" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>@platillo.Nombre</span>
@@ -71,6 +76,7 @@
                                             </h5>
                                             <small class="fst-italic">@platillo.Descripcion</small>
                                         </div>
+                                        <button class="btn btn-primary m-2" onclick="agregarACarrito(@platillo.Id, @platillo.Precio)">Agregar a carrito</button>
                                     </div>
                                 </div>
                             }
@@ -83,3 +89,23 @@
     </div>
 </div>
 <!-- Menu End -->
+
+@section Scripts {
+    <script>
+        function agregarACarrito(platilloId) {
+            //alert(platilloId)
+            debugger
+            lista = [];
+            var platillos = localStorage.getItem('platillos')
+            if (platillos != null) {
+                lista = JSON.parse(platillos)
+            }
+            lista.push(platilloId)
+
+            localStorage.setItem('platillos', JSON.stringify(lista))
+            var spanNumeroDePlatillos = document.getElementById('numeroDePlatillos')
+            spanNumeroDePlatillos.innerText = lista.length
+            alert("Platillo agregado");
+        }
+    </script>
+}

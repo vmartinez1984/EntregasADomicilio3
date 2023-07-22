@@ -1,0 +1,52 @@
+﻿@model EntregasADomicilio.BusinessLayer.Dtos.Login
+
+@{
+    ViewData["Title"] = "Iniciar sesión";
+}
+
+<h1>Iniciar sesión</h1>
+
+
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="wow fadeInUp" data-wow-delay="0.2s">
+            <form asp-action="IniciarSesion" method="post">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="email" class="form-control" asp-for="Correo" placeholder="Your Name">
+                            <label asp-for="Correo">Correo</label>
+                            <span asp-validation-for="Correo" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="password" class="form-control" asp-for="Contrasenia" placeholder="Your Email">
+                            <label asp-for="Contrasenia">Contraseña</label>
+                            <span asp-validation-for="Contrasenia" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-primary w-100 py-3" type="submit">Iniciar sesión</button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="wow fadeInUp" data-wow-delay="0.5s">
+            <p>No esta registrado</p>
+            <a asp-action="Index">Registrarse aquí</a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

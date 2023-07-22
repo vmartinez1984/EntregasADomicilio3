@@ -84,5 +84,19 @@ namespace EntregasADomicilio.BusinessLayer.Bl
 
             return pedidos;
         }
+
+        public Pedido ObtenerUltimoDelClienteId(int clienteId)
+        {
+            Pedido pedido;
+
+            pedido =  _appDbContext.Pedido
+                .Include(x => x.DetalleDelPedido)
+                .ThenInclude(x => x.Platillo)
+                .Where(x => x.ClienteId == clienteId)
+                .OrderByDescending(x=> x.Id)
+                .FirstOrDefault();
+
+            return pedido;
+        }
     }
 }

@@ -5,9 +5,10 @@ namespace EntregasADomicilio.Mvc.Publica.Controllers
 {
     public class PlatillosHomeController : Controller
     {
+
         public IActionResult Index()
         {
-            Platillo platillo;
+            
             
             return View();
         }

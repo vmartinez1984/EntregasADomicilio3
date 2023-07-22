@@ -1,0 +1,69 @@
+﻿@model IEnumerable<EntregasADomicilio.Core.Entidades.Platillo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Orden</h1>
+
+@foreach (var platillo in Model)
+{
+    <div class="col-lg-6">
+        <div class="d-flex align-items-center">
+            <img class="flex-shrink-0 img-fluid rounded" src="@platillo.Ruta" alt="" style="width: 80px;">
+            <div class="w-100 d-flex flex-column text-start ps-4">
+                <h5 class="d-flex justify-content-between border-bottom pb-2">
+                    <span>@platillo.Nombre</span>
+                    <span class="text-primary">$@platillo.Precio</span>
+                </h5>
+                <small class="fst-italic">@platillo.Descripcion</small>
+            </div>
+            <button class="btn btn-primary m-2" onclick="quitarDelCarrito(@platillo.Id)">Quitar a carrito</button>
+        </div>
+    </div>
+}
+
+<form asp-controller="Carrito" asp-action="RealizarPedido" id="formCarrito">
+
+    <button class="btn btn-primary" onclick="realizarPedido(event)">
+        Registar orden
+        @Model.Sum(x=> x.Precio).ToString("c")
+    </button>
+</form>
+
+@section Scripts {
+    <script>
+        function realizarPedido(event) {
+            debugger
+            var json = localStorage.getItem("platillos")
+            var platillos = JSON.parse(json)
+            formCarrito = document.getElementById('formCarrito')
+            for (i = 0; i < platillos.length; i++) {
+                //formCarrito.Add
+                var input
+
+                input = document.createElement('input')
+                input.name = 'detalleDelPedido[' + i + '].platilloId'
+                input.value = platillos[i]
+
+                formCarrito.appendChild(input)
+            }
+        }
+
+        function agregarACarrito(platilloId) {
+            //alert(platilloId)
+            debugger
+            lista = [];
+            var platillos = localStorage.getItem('platillos')
+            if (platillos != null) {
+                lista = JSON.parse(platillos)
+            }
+            lista.push(platilloId)
+
+            localStorage.setItem('platillos', JSON.stringify(lista))
+            var spanNumeroDePlatillos = document.getElementById('numeroDePlatillos')
+            spanNumeroDePlatillos.innerText = lista.length
+            alert("Platillo agregado");
+        }
+    </script>
+}

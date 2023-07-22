@@ -1,7 +1,6 @@
 ﻿using EntregasADomicilio.BusinessLayer.Bl;
 using EntregasADomicilio.BusinessLayer.Dtos;
 using EntregasADomicilio.Core.Entidades;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EntregasADomicilio.Api.Controllers
@@ -17,12 +16,12 @@ namespace EntregasADomicilio.Api.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        [HttpGet]
-        public IActionResult Get(int id)
+        [HttpGet("{clienteId}")]
+        public IActionResult Get(int clienteId)
         {
             Cliente cliente;
 
-            cliente = _unitOfWork.Cliente.Obtener(id);
+            cliente = _unitOfWork.Cliente.Obtener(clienteId);
 
             return Ok(cliente);
         }

@@ -25,7 +25,7 @@ namespace EntregasADomicilio.Api.Controllers
             return Created($"/Pedidos/{id}", new { Id = id });
         }
 
-        [HttpGet("{clienteId}")]
+        [HttpGet("Clientes/{clienteId}")]
         public IActionResult ObtenerPedidosPorCliente(int clienteId)
         {
             List<Pedido> lista;
@@ -45,12 +45,14 @@ namespace EntregasADomicilio.Api.Controllers
         //    return Ok(new { Estatus = estatus });
         //}
 
-        [HttpGet("{id}")]
-        public IActionResult Obtener(int id)
+        [HttpGet("{pedidoId}")]
+        public IActionResult Obtener(int pedidoId)
         {
             Pedido pedido;
 
-            pedido = _unitOfWork.Pedido.Obtener(id);
+            pedido = _unitOfWork.Pedido.Obtener(pedidoId);
+            if (pedido == null)
+                return NotFound(new { Mensaje = "No encontrado" });
 
             return Ok(pedido);
         }

@@ -1,4 +1,12 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@{
+    string clienteNombre;
+
+    clienteNombre = HttpContextAccessor.HttpContext.Session.GetString("clienteNombre");
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -72,9 +80,32 @@
                                 <a href="testimonial.html" class="dropdown-item">Testimonial</a>
                             </div>
                         </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a class="nav-item nav-link" asp-area="" asp-controller="Home" asp-action="Contact">Contacto</a>
+                        @if (string.IsNullOrEmpty(clienteNombre))
+                        {
+                            <a class="nav-item nav-link" asp-area="" asp-controller="IniciarSesion" asp-action="Index">Iniciar sesión</a>
+                        }
                     </div>
                     <a href="" class="btn btn-primary py-2 px-4">Book A Table</a>
+                    @if (string.IsNullOrEmpty(clienteNombre) == false)
+                    {
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">@clienteNombre</a>
+                            <div class="dropdown-menu m-0">
+                                <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Booking">Cerrar sesión</a>
+                                <a href="team.html" class="dropdown-item">Mi cuenta</a>
+                                <a asp-controller="Carrito" asp-action="Details" class="dropdown-item">Ultimo pedido</a>
+                                <a href="testimonial.html" class="dropdown-item">Mis pedidos</a>
+                            </div>
+                        </div>
+                        <form asp-action="Index" asp-controller="Carrito">
+                            <input type="hidden" id="carrito" name="carrito" value="" />
+                            <button type="submit" class="nav-item nav-link" onclick="agregarElCarrito(event)">
+                                <span id="numeroDePlatillos">0</span>
+                                Carrito
+                            </button>
+                        </form>
+                    }
                 </div>
             </nav>
 
@@ -92,32 +123,12 @@
             </div>
         </div>
         <!-- Navbar & Hero End -->
-    @*<header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">EntregasADomicilio.Mvc.Publica</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>*@
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+
+        <div class="container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
 
         <!-- Footer Start -->
         <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
@@ -203,6 +214,30 @@
 
     <!-- Template Javascript -->
     <script src="~/js/main.js"></script>
+    <script>
+        function agregarElCarrito(event) {
+            debugger
+            var platillos = localStorage.getItem("platillos")
+            document.getElementById('carrito').value = platillos
+            //event.preventDefault()
+        }
+    </script>
     @await RenderSectionAsync("Scripts", required: false)
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            agregarACarrito()
+        });
+        function agregarACarrito() {
+            //alert(platilloId)
+            debugger
+            lista = [];
+            var platillos = localStorage.getItem('platillos')
+            if (platillos != null) {
+                lista = JSON.parse(platillos)
+            }          
+            var spanNumeroDePlatillos = document.getElementById('numeroDePlatillos')
+            spanNumeroDePlatillos.innerText = lista.length       
+        }
+    </script>
 </body>
 </html>
